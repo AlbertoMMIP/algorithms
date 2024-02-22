@@ -9,6 +9,7 @@ const exercises = Object.freeze({
   factorial: 'factorial',
   fibonacci: 'fibonacci',
   sorting: 'sorting',
+  linked: 'linked',
 })
 
 export { exercises };
