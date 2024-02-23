@@ -12,6 +12,7 @@ const exercises = Object.freeze({
   linked: 'linked',
   stack: 'stack',
   stackArray: 'stackArray',
+  queue: 'queue',
 })
 
 export { exercises };
