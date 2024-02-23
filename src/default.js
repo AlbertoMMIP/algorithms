@@ -11,6 +11,7 @@ const exercises = Object.freeze({
   sorting: 'sorting',
   linked: 'linked',
   stack: 'stack',
+  stackArray: 'stackArray',
 })
 
 export { exercises };

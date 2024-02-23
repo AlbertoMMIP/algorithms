@@ -20,24 +20,40 @@ class Stack {
     if (this.length === 0) {
       this.top = newValue;
       this.bottom = newValue;
-      return;
+    } else {
+      newValue.next = this.top;
+      this.top = newValue;
     }
-    newValue.next = this.top;
-    this.top = newValue;
     this.length++;
   }
   pop () {
-
+    if (!this.top) return null;
+    if (this.top === this.bottom) {
+      this.bottom = null
+    }
+    const tmp = this.top.next;
+    const value = this.top.value;
+    this.top = tmp;
+    this.length--;
+    return value;
   }
   isEmpty () {
-
+    return this.length === 0;
   }
 }
 
 function init() {
   const myStack = new Stack();
   myStack.push('Google');
+  myStack.push('Udemy');
+  myStack.push('Discord');
 
+  console.log('My stack::', myStack);
+  console.log('My stack peek::', myStack.peek());
+  console.log('My stack pop::', myStack.pop());
+  console.log('My stack pop::', myStack.pop());
+  console.log('My stack pop::', myStack.pop());
+  console.log('My stack isEmpty::', myStack.isEmpty());
   console.log('My stack::', myStack);
 }
 
