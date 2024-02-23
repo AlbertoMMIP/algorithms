@@ -10,6 +10,7 @@ const exercises = Object.freeze({
   fibonacci: 'fibonacci',
   sorting: 'sorting',
   linked: 'linked',
+  stack: 'stack',
 })
 
 export { exercises };
