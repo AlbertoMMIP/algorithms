@@ -5,6 +5,7 @@ import { init as stack } from './Stack.js';
 import { init as stackArray } from './StackArray.js';
 import { init as queue } from './Queue.js';
 import { init as binarySearch } from './BinarySearchTree.js';
+import { init as graph } from './Graph.js';
 
 export default {
   array,
@@ -14,4 +15,5 @@ export default {
   stackArray,
   queue,
   binarySearch,
+  graph
 }
