@@ -13,6 +13,7 @@ const exercises = Object.freeze({
   stack: 'stack',
   stackArray: 'stackArray',
   queue: 'queue',
+  binarySearch: 'binarySearch'
 })
 
 export { exercises };

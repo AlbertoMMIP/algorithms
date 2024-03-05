@@ -4,6 +4,7 @@ import { init as linked } from './LinkedList.js';
 import { init as stack } from './Stack.js';
 import { init as stackArray } from './StackArray.js';
 import { init as queue } from './Queue.js';
+import { init as binarySearch } from './BinarySearchTree.js';
 
 export default {
   array,
@@ -12,4 +13,5 @@ export default {
   stack,
   stackArray,
   queue,
+  binarySearch,
 }
