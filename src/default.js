@@ -14,7 +14,8 @@ const exercises = Object.freeze({
   stackArray: 'stackArray',
   queue: 'queue',
   binarySearch: 'binarySearch',
-  graph: 'graph'
+  graph: 'graph',
+  binaryTest: 'binaryTest',
 })
 
 export { exercises };
