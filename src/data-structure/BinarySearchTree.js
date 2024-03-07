@@ -132,6 +132,37 @@ class BinarySearchTree {
     }
   }
 
+  breadthFirstSearch () {
+    let currentNode = this.root;
+    let list = [];
+    let queue = [];
+    queue.push(currentNode);
+    while(queue.length > 0) {
+      currentNode = queue.shift();
+      list.push(currentNode.value);
+      if (currentNode.left) {
+        queue.push(currentNode.left);
+      }
+      if (currentNode.right) {
+        queue.push(currentNode.right);
+      }
+    }
+    return list;
+  }
+
+  breadthFirstSearchR (queue, list) {
+    if (!queue.length) return list;
+    let currentNode = queue.shift();
+    list.push(currentNode.value);
+    if (currentNode.left) {
+      queue.push(currentNode.left);
+    }
+    if (currentNode.right) {
+      queue.push(currentNode.right);
+    }
+    return this.breadthFirstSearchR(queue, list);
+  }
+
 }
 
 function traverse (node) {
@@ -151,8 +182,10 @@ function init () {
   tree.insert(15);
   tree.insert(1);
   // console.log('Binary search tree:: Exists 20', tree.lookup(20));
-  tree.remove(170)
-  console.log('Binary search tree:: After deleteing 170', JSON.stringify(traverse(tree.root), null, 2));
+  // tree.remove(170)
+  // console.log('Binary search tree:: After deleteing 170', JSON.stringify(traverse(tree.root), null, 2));
+  // console.log('Breadth first search', tree.breadthFirstSearch());
+  console.log('Breadth first search recursive', tree.breadthFirstSearchR([tree.root], []));
 }
 
 
