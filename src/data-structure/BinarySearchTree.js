@@ -213,7 +213,18 @@ function traverse (node) {
   tree.left = node.left === null ? null : traverse(node.left);
   tree.right = node.right === null ? null : traverse(node.right);
   return tree;
-} 
+}
+
+/**
+ * 
+ * @param {TreeNode} root 
+ * @return {boolean}
+ */
+var isValidBST = function(root) {
+  const response = traverseInOrder(root, []);
+  console.log(response);
+}
+
 
 function init () {
   const tree = new BinarySearchTree();
@@ -231,7 +242,8 @@ function init () {
   // console.log('Breadth first search recursive', tree.breadthFirstSearchR([tree.root], []));
   // console.log('Deepth first search INORDER', tree.DFSInorder(tree.root, []));
   // console.log('Deepth first search POSTORDER', tree.DFSPostorder(tree.root, []));
-  console.log('Deepth first search PREORDER', tree.DFSPreorder(tree.root, []));
+  // console.log('Deepth first search PREORDER', tree.DFSPreorder(tree.root, []));
+  isValidBST(tree.root);
 }
 
 
