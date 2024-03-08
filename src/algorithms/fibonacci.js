@@ -36,12 +36,21 @@ function fibonacciOptimaze() {   // O (n)
   }
 }
 
+function fibonacciArrays (n) {
+  let answers = [0,1];
+  for (let c = 2; c <= n; c++) {
+    answers.push(answers[c-1] + answers[c-2])
+  }
+  return answers.pop();
+}
+
 export function init() {
   const index = 5
   // const valueInFibonacci = fibonacciIterative(index);
   const fibonacciMaster = fibonacciOptimaze();
   // const valueInFibonacci = fibonacciRecursive(index);
   // console.log(`Fibonacci value of index ${index} is::: ${valueInFibonacci}`)
-  console.log(`Fibonacci DP value of index ${index} is::: ${fibonacciMaster(10)}`)
+  console.log(`Fibonacci DP value of index ${index} is::: ${fibonacciMaster(index)}`)
+  console.log(`Fibonacci Arrays value of index ${index} is::: ${fibonacciArrays(index)}`)
 
 }
