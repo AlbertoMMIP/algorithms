@@ -23,10 +23,25 @@ function fibonacciRecursive(n) {  // O(2^n)
   return fibonacciRecursive(n-1) + fibonacciRecursive(n-2);
 }
 
+function fibonacciOptimaze() {   // O (n)
+  let cache = {};
+  return function fib(n) {
+    if (!cache[n]) {
+      if (n < 2) return n;
+      else {
+        cache[n] = fib(n-1) + fib(n-2);        
+      }
+    }
+    return cache[n];
+  }
+}
+
 export function init() {
   const index = 5
-  const valueInFibonacci = fibonacciIterative(index);
+  // const valueInFibonacci = fibonacciIterative(index);
+  const fibonacciMaster = fibonacciOptimaze();
   // const valueInFibonacci = fibonacciRecursive(index);
-  console.log(`Fibonacci value of index ${index} is::: ${valueInFibonacci}`)
+  // console.log(`Fibonacci value of index ${index} is::: ${valueInFibonacci}`)
+  console.log(`Fibonacci DP value of index ${index} is::: ${fibonacciMaster(10)}`)
 
 }
